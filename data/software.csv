@@ -1,0 +1,11 @@
+key,name,desc,price,sku,minRam,workstationOnly,subscriptionPeriod,icon,image
+sw-w11p,Windows 11 Pro,"Full Windows 11 Pro licence. BitLocker, Remote Desktop, Hyper-V, and enterprise management.",199,SW-W11PRO,8,false,perpetual,bi-windows,https://placehold.co/120x80/0078d4/ffffff?text=Win+11+Pro
+sw-m365,Microsoft 365 Business Standard (1yr),"Word, Excel, PowerPoint, Teams, SharePoint, Exchange. Up to 300 users per org.",149,SW-M365BS,4,false,1yr,bi-microsoft,https://placehold.co/120x80/d83b01/ffffff?text=M365
+sw-aapdc,Adobe Acrobat Pro DC (1yr),"Create, edit, sign, and protect PDFs. AI-powered tools and cloud storage included.",179,SW-AAPDC,8,false,1yr,bi-file-earmark-pdf,https://placehold.co/120x80/ec1c24/ffffff?text=Acrobat+Pro
+sw-mces,McAfee Endpoint Security (1yr/seat),"Threat prevention, firewall, web control, and centralised management via ePolicy Orchestrator.",69,SW-MCES1Y,4,false,1yr,bi-shield-lock-fill,https://placehold.co/120x80/c0392b/ffffff?text=McAfee
+sw-vmw,VMware Workstation Pro 17,"Run multiple OS simultaneously on one PC. Snapshot, clone, and share VMs easily.",249,SW-VMWP17,16,false,perpetual,bi-layers-half,https://placehold.co/120x80/607078/ffffff?text=VMware
+sw-autocad,AutoCAD LT (1yr Subscription),"2D drafting and documentation. DWG-native, desktop and web and mobile access included.",499,SW-ACADLT1Y,16,true,1yr,bi-pencil-square,https://placehold.co/120x80/0696d7/ffffff?text=AutoCAD+LT
+sw-acc,Adobe Creative Cloud All Apps (1yr),"Photoshop, Illustrator, Premiere Pro, After Effects, InDesign plus 100 GB cloud storage.",599,SW-ACC1Y,16,false,1yr,bi-palette2,https://placehold.co/120x80/da1f26/ffffff?text=Adobe+CC
+sw-bitdf,Bitdefender GravityZone Business (1yr/seat),"Next-gen AV, EDR, ransomware remediation, and centralised cloud management console.",49,SW-BDFGZ1Y,4,false,1yr,bi-shield-fill-check,https://placehold.co/120x80/e31e25/ffffff?text=Bitdefender
+sw-teams,Microsoft Teams Phone (1yr/user),"Direct Routing PSTN calling, voicemail, auto-attendant, call queues. Requires M365.",120,SW-MSTPH1Y,4,false,1yr,bi-telephone-fill,https://placehold.co/120x80/5059c9/ffffff?text=Teams+Phone
+sw-solid,SOLIDWORKS Standard (1yr Subscription),"3D CAD modelling, simulation, and design validation. ISV-certified on Precision and ZBook.",1295,SW-SWSTD1Y,16,true,1yr,bi-box,https://placehold.co/120x80/d52b1e/ffffff?text=SOLIDWORKS

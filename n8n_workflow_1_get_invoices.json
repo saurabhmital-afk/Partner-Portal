@@ -1,0 +1,109 @@
+{
+  "name": "Partner Portal — Get Invoices",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "get-invoices",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "id": "node-webhook-001",
+      "name": "Webhook — GET /get-invoices",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "get-invoices-webhook"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Sheet1",
+          "mode": "name"
+        },
+        "options": {}
+      },
+      "id": "node-sheets-read-001",
+      "name": "Google Sheets — Read All Rows",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [500, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "allIncomingItems",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      },
+      "id": "node-respond-001",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [760, 300]
+    }
+  ],
+  "connections": {
+    "Webhook — GET /get-invoices": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets — Read All Rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets — Read All Rows": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1",
+  "id": "partner-portal-get-invoices",
+  "_instructions": {
+    "step1": "In n8n, go to Workflows → Import from JSON → paste this file",
+    "step2": "Replace YOUR_GOOGLE_SHEET_ID with the ID from your Google Sheet URL: docs.google.com/spreadsheets/d/THIS_PART/edit",
+    "step3": "Replace REPLACE_WITH_YOUR_CREDENTIAL_ID with your Google Sheets OAuth2 credential ID, or re-select it in the node",
+    "step4": "Set sheetName value to the exact tab name in your Google Sheet (default: Sheet1)",
+    "step5": "Activate the workflow — your webhook URL will be: https://YOUR_N8N_INSTANCE/webhook/get-invoices"
+  }
+}

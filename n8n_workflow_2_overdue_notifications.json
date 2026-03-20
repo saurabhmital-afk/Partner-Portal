@@ -1,0 +1,213 @@
+{
+  "name": "Partner Portal — Overdue Invoice Notifications",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * 1-5"
+            }
+          ]
+        }
+      },
+      "id": "node-schedule-001",
+      "name": "Schedule — Weekdays 9am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Sheet1",
+          "mode": "name"
+        },
+        "options": {}
+      },
+      "id": "node-sheets-read-002",
+      "name": "Google Sheets — Read All Rows",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [500, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "cond-overdue",
+              "leftValue": "={{ $json[\"Invoice Status\"] }}",
+              "rightValue": "Overdue",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "cond-not-paid",
+              "leftValue": "={{ $json[\"Payment Status\"] }}",
+              "rightValue": "Paid",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            },
+            {
+              "id": "cond-not-notified",
+              "leftValue": "={{ $json[\"Notification Sent\"] }}",
+              "rightValue": "Yes",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        }
+      },
+      "id": "node-filter-001",
+      "name": "Filter — Overdue & Unnotified",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [760, 300]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json[\"Vendor Contact Info\"] }}",
+        "subject": "=Payment Overdue — Invoice {{ $json[\"Invoice Number\"] }} | {{ $json[\"Vendor Name\"] }}",
+        "emailType": "html",
+        "message": "=<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;\">\n  <div style=\"background: #d32f2f; color: white; padding: 16px 20px; border-radius: 6px 6px 0 0;\">\n    <h2 style=\"margin: 0; font-size: 18px;\">Payment Overdue Notice</h2>\n  </div>\n  <div style=\"border: 1px solid #e0e0e0; border-top: none; padding: 24px; border-radius: 0 0 6px 6px;\">\n    <p>Dear <strong>{{ $json[\"Vendor Name\"] }}</strong>,</p>\n    <p>This is an automated notification that the following invoice is currently <strong style=\"color: #d32f2f;\">overdue</strong> and requires your attention.</p>\n    <table style=\"width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px;\">\n      <tr style=\"background: #f5f5f5;\">\n        <td style=\"padding: 10px 14px; border: 1px solid #ddd; font-weight: bold; width: 45%;\">Invoice Number</td>\n        <td style=\"padding: 10px 14px; border: 1px solid #ddd;\">{{ $json[\"Invoice Number\"] }}</td>\n      </tr>\n      <tr>\n        <td style=\"padding: 10px 14px; border: 1px solid #ddd; font-weight: bold; background: #fafafa;\">Invoice Date</td>\n        <td style=\"padding: 10px 14px; border: 1px solid #ddd;\">{{ $json[\"Invoice date\"] }}</td>\n      </tr>\n      <tr style=\"background: #f5f5f5;\">\n        <td style=\"padding: 10px 14px; border: 1px solid #ddd; font-weight: bold;\">PO Number</td>\n        <td style=\"padding: 10px 14px; border: 1px solid #ddd;\">{{ $json[\"PO Number\"] }}</td>\n      </tr>\n      <tr>\n        <td style=\"padding: 10px 14px; border: 1px solid #ddd; font-weight: bold; background: #fafafa;\">PO Status</td>\n        <td style=\"padding: 10px 14px; border: 1px solid #ddd;\">{{ $json[\"PO Status\"] }}</td>\n      </tr>\n      <tr style=\"background: #f5f5f5;\">\n        <td style=\"padding: 10px 14px; border: 1px solid #ddd; font-weight: bold;\">Supplier Type</td>\n        <td style=\"padding: 10px 14px; border: 1px solid #ddd;\">{{ $json[\"Supplier Type\"] }}</td>\n      </tr>\n      <tr>\n        <td style=\"padding: 10px 14px; border: 1px solid #ddd; font-weight: bold; background: #fafafa;\">Contract Value</td>\n        <td style=\"padding: 10px 14px; border: 1px solid #ddd;\">{{ $json[\"Contract Value\"] }}</td>\n      </tr>\n      <tr style=\"background: #fff3e0;\">\n        <td style=\"padding: 10px 14px; border: 1px solid #ddd; font-weight: bold;\">Balance Outstanding</td>\n        <td style=\"padding: 10px 14px; border: 1px solid #ddd; font-weight: bold; color: #d32f2f;\">{{ $json[\"Balance\"] }}</td>\n      </tr>\n      <tr>\n        <td style=\"padding: 10px 14px; border: 1px solid #ddd; font-weight: bold; background: #fafafa;\">Payment Status</td>\n        <td style=\"padding: 10px 14px; border: 1px solid #ddd;\">{{ $json[\"Payment Status\"] }}</td>\n      </tr>\n    </table>\n    <p>Please arrange payment or contact us to discuss settlement at your earliest convenience.</p>\n    <hr style=\"border: none; border-top: 1px solid #eee; margin: 20px 0;\">\n    <p style=\"font-size: 12px; color: #888;\">This is an automated notification. Please do not reply directly to this email.</p>\n  </div>\n</div>",
+        "options": {}
+      },
+      "id": "node-gmail-001",
+      "name": "Gmail — Send Overdue Notice",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [1020, 300],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "REPLACE_WITH_YOUR_GMAIL_CREDENTIAL_ID",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "YOUR_GOOGLE_SHEET_ID",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "Sheet1",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Invoice Number": "={{ $json[\"Invoice Number\"] }}",
+            "Notification Sent": "Yes"
+          },
+          "matchingColumns": ["Invoice Number"],
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "node-sheets-update-001",
+      "name": "Google Sheets — Mark Notified",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [1280, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REPLACE_WITH_YOUR_CREDENTIAL_ID",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule — Weekdays 9am": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets — Read All Rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets — Read All Rows": {
+      "main": [
+        [
+          {
+            "node": "Filter — Overdue & Unnotified",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter — Overdue & Unnotified": {
+      "main": [
+        [
+          {
+            "node": "Gmail — Send Overdue Notice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail — Send Overdue Notice": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets — Mark Notified",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1",
+  "id": "partner-portal-overdue-notifications",
+  "_instructions": {
+    "step1": "In n8n, go to Workflows → Import from JSON → paste this file",
+    "step2": "Replace YOUR_GOOGLE_SHEET_ID (appears twice — Read and Update nodes) with your sheet ID",
+    "step3": "Replace REPLACE_WITH_YOUR_CREDENTIAL_ID with your Google Sheets OAuth2 credential ID",
+    "step4": "Replace REPLACE_WITH_YOUR_GMAIL_CREDENTIAL_ID with your Gmail OAuth2 credential ID",
+    "step5": "Add a column called 'Notification Sent' to your Google Sheet — leave all rows blank initially",
+    "step6": "The schedule runs Mon–Fri at 9am server time. Change the cron expression if needed: '0 9 * * *' = every day, '0 9 * * 1-5' = weekdays only",
+    "step7": "To test manually: open the workflow, click the Schedule node, and use 'Execute Step' to trigger a test run",
+    "note": "n8n processes each filtered row individually — Gmail and the Update node run once per overdue invoice automatically"
+  }
+}

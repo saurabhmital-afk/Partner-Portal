@@ -1,0 +1,201 @@
+id,subId,customer,product,type,start,end,status,amount
+ORD-2023-0001,SUB-ACM-001,Acme Corporation,Dell Latitude 5540 × 15,new_purchase,2023-01-15,2026-01-14,expired,23985
+ORD-2023-0002,SUB-ACM-002,Acme Corporation,Microsoft 365 Business × 15,new_purchase,2023-01-15,2024-01-14,expired,2235
+ORD-2023-0003,SUB-ACM-003,Acme Corporation,McAfee Endpoint Security × 15,new_purchase,2023-01-15,2024-01-14,expired,1035
+ORD-2023-0004,SUB-SUN-001,Sunrise Media Group,HP EliteBook 840 G10 × 8,new_purchase,2023-02-01,2026-01-31,expired,13592
+ORD-2023-0005,SUB-SUN-002,Sunrise Media Group,Adobe Acrobat Pro DC × 8,new_purchase,2023-02-01,2024-01-31,expired,1432
+ORD-2023-0006,SUB-BLU-001,BlueCrest Engineering,Dell Precision 3580 × 5,new_purchase,2023-02-15,2026-02-14,expired,12495
+ORD-2023-0007,SUB-BLU-002,BlueCrest Engineering,AutoCAD LT × 5,new_purchase,2023-02-15,2024-02-14,expired,2495
+ORD-2023-0008,SUB-BLU-003,BlueCrest Engineering,Dell WD22TB4 Dock × 5,add_on,2023-02-20,,active,1495
+ORD-2023-0009,SUB-DAT-001,DataFlow Analytics,Dell Precision 3580 × 4,new_purchase,2023-03-01,2026-02-28,active,9996
+ORD-2023-0010,SUB-DAT-002,DataFlow Analytics,VMware Workstation Pro × 4,new_purchase,2023-03-01,,active,996
+ORD-2023-0011,SUB-MER-001,Meridian Finance Ltd,HP EliteBook 840 G10 × 20,new_purchase,2023-03-15,2026-03-14,active,33980
+ORD-2023-0012,SUB-MER-002,Meridian Finance Ltd,Microsoft 365 Business × 20,new_purchase,2023-03-15,2024-03-14,expired,2980
+ORD-2023-0013,SUB-MER-003,Meridian Finance Ltd,Bitdefender GravityZone × 20,new_purchase,2023-03-15,2024-03-14,expired,980
+ORD-2023-0014,SUB-GLE-001,GlobalEdge Technologies,Dell Latitude 5540 × 30,new_purchase,2023-04-01,2026-03-31,active,53970
+ORD-2023-0015,SUB-GLE-002,GlobalEdge Technologies,Microsoft 365 Business × 30,new_purchase,2023-04-01,2024-03-31,expired,4470
+ORD-2023-0016,SUB-GLE-003,GlobalEdge Technologies,Windows 11 Pro × 30,new_purchase,2023-04-01,,active,5970
+ORD-2023-0017,SUB-IND-001,IndieArt Studios,HP ZBook Studio G10 × 4,new_purchase,2023-04-15,2026-04-14,active,12796
+ORD-2023-0018,SUB-IND-002,IndieArt Studios,Adobe Creative Cloud × 4,new_purchase,2023-04-15,2024-04-14,expired,2396
+ORD-2023-0019,SUB-IND-003,IndieArt Studios,HP Thunderbolt Dock G4 × 4,add_on,2023-04-20,,active,1116
+ORD-2023-0020,SUB-QTM-001,QuantumLabs Research,Dell Precision 5690 × 6,new_purchase,2023-05-01,2026-04-30,active,19194
+ORD-2023-0021,SUB-QTM-002,QuantumLabs Research,SOLIDWORKS Standard × 6,new_purchase,2023-05-01,2024-04-30,expired,7770
+ORD-2023-0022,SUB-VRT-001,Vertigo Consulting,HP EliteBook 860 G10 × 10,new_purchase,2023-05-15,2026-05-14,active,18490
+ORD-2023-0023,SUB-VRT-002,Vertigo Consulting,Microsoft 365 Business × 10,new_purchase,2023-05-15,2024-05-14,expired,1490
+ORD-2023-0024,SUB-HBV-001,Harbor View Corp,HP EliteBook 840 G10 × 12,new_purchase,2023-06-01,2026-05-31,active,20388
+ORD-2023-0025,SUB-HBV-002,Harbor View Corp,McAfee Endpoint Security × 12,new_purchase,2023-06-01,2024-05-31,expired,828
+ORD-2023-0026,SUB-PAC-001,Pacific Rim Logistics,Dell Latitude 5540 × 18,new_purchase,2023-06-15,2026-06-14,active,32382
+ORD-2023-0027,SUB-PAC-002,Pacific Rim Logistics,Windows 11 Pro × 18,new_purchase,2023-06-15,,active,3582
+ORD-2023-0028,SUB-NVL-001,NewVenture LLC,Dell Latitude 5440 × 5,new_purchase,2023-07-01,2026-06-30,active,7995
+ORD-2023-0029,SUB-NVL-002,NewVenture LLC,Microsoft 365 Business × 5,new_purchase,2023-07-01,2024-06-30,expired,745
+ORD-2023-0030,SUB-APX-001,Apex Systems Inc,Dell Latitude 5540 × 25,new_purchase,2023-07-15,2026-07-14,active,44975
+ORD-2023-0031,SUB-APX-002,Apex Systems Inc,Microsoft 365 Business × 25,new_purchase,2023-07-15,2024-07-14,expired,3725
+ORD-2023-0032,SUB-CLH-001,Clearwater Health,HP EliteBook 840 G10 × 14,new_purchase,2023-08-01,2026-07-31,active,23786
+ORD-2023-0033,SUB-CLH-002,Clearwater Health,Bitdefender GravityZone × 14,new_purchase,2023-08-01,2024-07-31,expired,686
+ORD-2023-0034,SUB-IRN-001,Ironbridge Capital,Dell Latitude 5540 × 22,new_purchase,2023-08-15,2026-08-14,active,39578
+ORD-2023-0035,SUB-IRN-002,Ironbridge Capital,Microsoft 365 Business × 22,new_purchase,2023-08-15,2024-08-14,expired,3278
+ORD-2023-0036,SUB-NVT-001,NovaTech Solutions,HP EliteBook 860 G10 × 8,new_purchase,2023-09-01,2026-08-31,active,14792
+ORD-2023-0037,SUB-NVT-002,NovaTech Solutions,VMware Workstation Pro × 4,new_purchase,2023-09-01,,active,996
+ORD-2023-0038,SUB-SKY-001,Skyline Architects,Dell Precision 3580 × 6,new_purchase,2023-09-15,2026-09-14,active,14994
+ORD-2023-0039,SUB-SKY-002,Skyline Architects,AutoCAD LT × 6,new_purchase,2023-09-15,2024-09-14,expired,2994
+ORD-2023-0040,SUB-FUS-001,Fusion Marketing,HP EliteBook 840 G10 × 9,new_purchase,2023-10-01,2026-09-30,active,15291
+ORD-2023-0041,SUB-FUS-002,Fusion Marketing,Adobe Acrobat Pro DC × 9,new_purchase,2023-10-01,2024-09-30,expired,1611
+ORD-2023-0042,SUB-CRW-001,CrestWave Finance,HP EliteBook 840 G10 × 16,new_purchase,2023-10-15,2026-10-14,active,27184
+ORD-2023-0043,SUB-CRW-002,CrestWave Finance,Windows 11 Pro × 16,new_purchase,2023-10-15,,active,3184
+ORD-2023-0044,SUB-PAX-001,Parallax Studios,HP ZBook Studio G10 × 3,new_purchase,2023-11-01,2026-10-31,active,9597
+ORD-2023-0045,SUB-PAX-002,Parallax Studios,Adobe Creative Cloud × 3,new_purchase,2023-11-01,2024-10-31,expired,1797
+ORD-2023-0046,SUB-RDG-001,Ridgeline Consulting,Dell Latitude 5440 × 7,new_purchase,2023-11-15,2026-11-14,active,10486
+ORD-2023-0047,SUB-MTM-001,Momentum Creative,HP ZBook Fury 16 G10 × 2,new_purchase,2023-12-01,2026-11-30,active,7798
+ORD-2023-0048,SUB-SFX-001,SoloFX Studio,Dell Precision 3580 × 1,new_purchase,2023-12-01,2026-11-30,active,2599
+ORD-2023-0049,SUB-CST-001,Coastal Properties,HP EliteBook 840 G10 × 6,new_purchase,2023-12-15,2026-12-14,active,10194
+ORD-2023-0050,SUB-RED-001,Redstone Partners,Dell Latitude 5540 × 4,new_purchase,2023-12-15,2026-12-14,active,7196
+ORD-2024-0001,SUB-ACM-004,Acme Corporation,Dell Latitude 5540 × 10,renewal,2024-01-15,2027-01-14,active,18990
+ORD-2024-0002,SUB-ACM-005,Acme Corporation,Microsoft 365 Business × 15,renewal,2024-01-15,2025-01-14,expired,2235
+ORD-2024-0003,SUB-ACM-006,Acme Corporation,McAfee Endpoint Security × 15,renewal,2024-01-15,2025-01-14,expired,1035
+ORD-2024-0004,SUB-SUN-003,Sunrise Media Group,HP EliteBook 840 G10 × 5,new_purchase,2024-02-01,2027-01-31,active,8495
+ORD-2024-0005,SUB-SUN-004,Sunrise Media Group,Adobe Acrobat Pro DC × 8,renewal,2024-02-01,2025-01-31,expired,1432
+ORD-2024-0006,SUB-SUN-005,Sunrise Media Group,Extended Warranty 3yr × 8,add_on,2024-02-10,2027-02-09,active,1832
+ORD-2024-0007,SUB-BLU-004,BlueCrest Engineering,HP ZBook Studio G10 × 3,new_purchase,2024-02-15,2027-02-14,active,9297
+ORD-2024-0008,SUB-BLU-005,BlueCrest Engineering,AutoCAD LT × 5,renewal,2024-02-15,2025-02-14,expired,2495
+ORD-2024-0009,SUB-BLU-006,BlueCrest Engineering,SOLIDWORKS Standard × 3,new_purchase,2024-03-01,2025-02-28,expired,3885
+ORD-2024-0010,SUB-DAT-003,DataFlow Analytics,Dell Precision 3580 × 2,new_purchase,2024-03-01,2027-02-28,active,5198
+ORD-2024-0011,SUB-DAT-004,DataFlow Analytics,VMware Workstation Pro × 4,renewal,2024-03-01,2025-02-28,expired,996
+ORD-2024-0012,SUB-MER-004,Meridian Finance Ltd,HP EliteBook 840 G10 × 15,new_purchase,2024-03-15,2027-03-14,active,25485
+ORD-2024-0013,SUB-MER-005,Meridian Finance Ltd,Microsoft 365 Business × 20,renewal,2024-03-15,2025-03-14,expired,2980
+ORD-2024-0014,SUB-MER-006,Meridian Finance Ltd,HP 27in QHD Monitor × 15 (Add-On),add_on,2024-03-20,,active,5835
+ORD-2024-0015,SUB-GLE-004,GlobalEdge Technologies,Dell Latitude 5540 × 20,new_purchase,2024-04-01,2027-03-31,active,35980
+ORD-2024-0016,SUB-GLE-005,GlobalEdge Technologies,Microsoft 365 Business × 30,renewal,2024-04-01,2025-03-31,expired,4470
+ORD-2024-0017,SUB-IND-004,IndieArt Studios,Adobe Creative Cloud × 5,renewal,2024-04-15,2025-04-14,active,2995
+ORD-2024-0018,SUB-IND-005,IndieArt Studios,HP ZBook Studio G10 × 1,new_purchase,2024-04-15,2027-04-14,active,3199
+ORD-2024-0019,SUB-QTM-003,QuantumLabs Research,Dell Precision 3580 × 4,new_purchase,2024-05-01,2027-04-30,active,9996
+ORD-2024-0020,SUB-QTM-004,QuantumLabs Research,SOLIDWORKS Standard × 4,renewal,2024-05-01,2025-04-30,active,5180
+ORD-2024-0021,SUB-VRT-003,Vertigo Consulting,HP EliteBook 860 G10 × 8,new_purchase,2024-05-15,2027-05-14,active,14792
+ORD-2024-0022,SUB-VRT-004,Vertigo Consulting,Microsoft 365 Business × 10,renewal,2024-05-15,2025-05-14,active,1490
+ORD-2024-0023,SUB-HBV-003,Harbor View Corp,HP EliteBook 840 G10 × 10,new_purchase,2024-06-01,2027-05-31,active,16990
+ORD-2024-0024,SUB-HBV-004,Harbor View Corp,McAfee Endpoint Security × 12,renewal,2024-06-01,2025-05-31,active,828
+ORD-2024-0025,SUB-PAC-003,Pacific Rim Logistics,Dell Latitude 5540 × 12,new_purchase,2024-06-15,2027-06-14,active,22788
+ORD-2024-0026,SUB-PAC-004,Pacific Rim Logistics,Dell 27in Monitor × 10 (Add-On),add_on,2024-06-20,,active,4490
+ORD-2024-0027,SUB-NVL-003,NewVenture LLC,Dell Latitude 5540 × 5,new_purchase,2024-07-01,2027-06-30,active,9495
+ORD-2024-0028,SUB-NVL-004,NewVenture LLC,Microsoft 365 Business × 5,renewal,2024-07-01,2025-06-30,active,745
+ORD-2024-0029,SUB-APX-003,Apex Systems Inc,Dell Latitude 5440 × 20,new_purchase,2024-07-15,2027-07-14,active,28980
+ORD-2024-0030,SUB-APX-004,Apex Systems Inc,Windows 11 Pro × 25,renewal,2024-07-15,,active,4975
+ORD-2024-0031,SUB-CLH-003,Clearwater Health,HP EliteBook 840 G10 × 10,new_purchase,2024-08-01,2027-07-31,active,16990
+ORD-2024-0032,SUB-CLH-004,Clearwater Health,Bitdefender GravityZone × 14,renewal,2024-08-01,2025-07-31,active,686
+ORD-2024-0033,SUB-IRN-003,Ironbridge Capital,Dell Latitude 5540 × 18,renewal,2024-08-15,2027-08-14,active,34182
+ORD-2024-0034,SUB-IRN-004,Ironbridge Capital,Microsoft 365 Business × 22,renewal,2024-08-15,2025-08-14,active,3278
+ORD-2024-0035,SUB-NVT-003,NovaTech Solutions,HP EliteBook 860 G10 × 6,new_purchase,2024-09-01,2027-08-31,active,11094
+ORD-2024-0036,SUB-NVT-004,NovaTech Solutions,VMware Workstation Pro × 6,new_purchase,2024-09-01,,active,1494
+ORD-2024-0037,SUB-SKY-003,Skyline Architects,Dell Precision 3580 × 4,new_purchase,2024-09-15,2027-09-14,active,9996
+ORD-2024-0038,SUB-SKY-004,Skyline Architects,AutoCAD LT × 6,renewal,2024-09-15,2025-09-14,active,2994
+ORD-2024-0039,SUB-FUS-003,Fusion Marketing,HP EliteBook 840 G10 × 6,new_purchase,2024-10-01,2027-09-30,active,10194
+ORD-2024-0040,SUB-FUS-004,Fusion Marketing,Adobe Acrobat Pro DC × 9,renewal,2024-10-01,2025-09-30,active,1611
+ORD-2024-0041,SUB-CRW-003,CrestWave Finance,HP EliteBook 840 G10 × 12,new_purchase,2024-10-15,2027-10-14,active,20388
+ORD-2024-0042,SUB-CRW-004,CrestWave Finance,Microsoft Teams Phone × 16,new_purchase,2024-10-15,2025-10-14,active,1920
+ORD-2024-0043,SUB-PAX-003,Parallax Studios,HP ZBook Studio G10 × 3,renewal,2024-10-15,2027-10-14,active,9597
+ORD-2024-0044,SUB-PAX-004,Parallax Studios,Adobe Creative Cloud × 3,renewal,2024-10-15,2025-10-14,active,1797
+ORD-2024-0045,SUB-RDG-002,Ridgeline Consulting,Dell Latitude 5440 × 4,new_purchase,2024-11-01,2027-10-31,active,5996
+ORD-2024-0046,SUB-RDG-003,Ridgeline Consulting,Microsoft 365 Business × 7,new_purchase,2024-11-01,2025-10-31,active,1043
+ORD-2024-0047,SUB-MTM-002,Momentum Creative,HP ZBook Fury 16 G10 × 3,new_purchase,2024-11-15,2027-11-14,active,11697
+ORD-2024-0048,SUB-MTM-003,Momentum Creative,Adobe Creative Cloud × 5,new_purchase,2024-11-15,2025-11-14,active,2995
+ORD-2024-0049,SUB-SFX-002,SoloFX Studio,HP ZBook Studio G10 × 1,new_purchase,2024-11-20,2027-11-19,active,3299
+ORD-2024-0050,SUB-CST-002,Coastal Properties,HP EliteBook 840 G10 × 4,new_purchase,2024-12-01,2027-11-30,active,6796
+ORD-2024-0051,SUB-RED-002,Redstone Partners,Dell Latitude 5540 × 3,new_purchase,2024-12-01,2027-11-30,cancelled,5697
+ORD-2024-0052,SUB-ACM-007,Acme Corporation,Dell 27in Monitor + Dock × 8,add_on,2024-07-15,,active,5824
+ORD-2024-0053,SUB-GLE-006,GlobalEdge Technologies,McAfee Endpoint Security × 20,new_purchase,2024-04-15,2025-04-14,active,1380
+ORD-2024-0054,SUB-IRN-005,Ironbridge Capital,Logitech MX Keys × 22 (Add-On),add_on,2024-08-20,,active,2398
+ORD-2024-0055,SUB-APX-005,Apex Systems Inc,Extended Warranty 3yr × 25,add_on,2024-07-20,2027-07-19,active,5725
+ORD-2024-0056,SUB-CLH-005,Clearwater Health,HP Thunderbolt Dock G4 × 10,add_on,2024-08-10,,active,2790
+ORD-2024-0057,SUB-BLU-007,BlueCrest Engineering,Dell WD22TB4 Dock × 3 (Add-On),add_on,2024-03-10,,active,897
+ORD-2024-0058,SUB-VRT-005,Vertigo Consulting,Jabra Evolve2 55 × 10 (Add-On),add_on,2024-05-20,,active,2990
+ORD-2024-0059,SUB-PAC-005,Pacific Rim Logistics,Windows 11 Pro × 18,add_on,2024-07-01,,active,3582
+ORD-2024-0060,SUB-MER-007,Meridian Finance Ltd,Bitdefender GravityZone × 20,renewal,2024-03-15,2025-03-14,expired,980
+ORD-2024-0061,SUB-QTM-005,QuantumLabs Research,Dell Precision 5690 × 2,new_purchase,2024-05-15,2027-05-14,active,7998
+ORD-2024-0062,SUB-SKY-005,Skyline Architects,SOLIDWORKS Standard × 6,new_purchase,2024-09-20,2025-09-19,active,7770
+ORD-2024-0063,SUB-NVT-005,NovaTech Solutions,Dell Latitude 5440 × 5,new_purchase,2024-09-05,2027-09-04,active,7495
+ORD-2024-0064,SUB-HBV-005,Harbor View Corp,HP 24in FHD Monitor × 10 (Add-On),add_on,2024-06-10,,active,2490
+ORD-2024-0065,SUB-FUS-005,Fusion Marketing,Adobe Creative Cloud × 4,new_purchase,2024-10-10,2025-10-09,active,2396
+ORD-2024-0066,SUB-CRW-005,CrestWave Finance,McAfee Endpoint Security × 16,new_purchase,2024-10-20,2025-10-19,active,1104
+ORD-2024-0067,SUB-RDG-004,Ridgeline Consulting,Logitech MX Master 3S × 7 (Add-On),add_on,2024-11-05,,active,693
+ORD-2024-0068,SUB-CST-003,Coastal Properties,McAfee Endpoint Security × 6,new_purchase,2024-12-05,2025-12-04,active,414
+ORD-2024-0069,SUB-PAX-005,Parallax Studios,HP ZBook Fury 16 G10 × 1,new_purchase,2024-10-20,2027-10-19,active,3899
+ORD-2024-0070,SUB-MTM-004,Momentum Creative,HP Thunderbolt Dock G4 × 5 (Add-On),add_on,2024-11-20,,active,1395
+ORD-2024-0071,SUB-SFX-003,SoloFX Studio,Adobe Creative Cloud × 1,new_purchase,2024-11-20,2025-11-19,active,599
+ORD-2024-0072,SUB-ACM-008,Acme Corporation,Extended Warranty 3yr × 10 (Add-On),add_on,2024-07-20,2027-01-14,active,2290
+ORD-2024-0073,SUB-BLU-008,BlueCrest Engineering,HP ZBook Studio G10 × 2,new_purchase,2024-03-05,2027-03-04,active,6398
+ORD-2024-0074,SUB-DAT-005,DataFlow Analytics,Bitdefender GravityZone × 8,new_purchase,2024-03-10,2025-03-09,expired,392
+ORD-2024-0075,SUB-NVL-005,NewVenture LLC,Dell Latitude 5440 × 3,new_purchase,2024-07-10,2027-07-09,active,4347
+ORD-2024-0076,SUB-RED-003,Redstone Partners,HP EliteBook 860 G10 × 4,new_purchase,2024-12-10,2027-12-09,pending,7396
+ORD-2024-0077,SUB-IRN-006,Ironbridge Capital,Teams Phone × 22,new_purchase,2024-09-01,2025-08-31,active,2640
+ORD-2024-0078,SUB-CLH-006,Clearwater Health,Microsoft Teams Phone × 14,new_purchase,2024-08-15,2025-08-14,active,1680
+ORD-2024-0079,SUB-GLE-007,GlobalEdge Technologies,Logitech MX Keys × 30 (Add-On),add_on,2024-04-10,,active,3270
+ORD-2024-0080,SUB-SKY-006,Skyline Architects,Dell WD22TB4 Dock × 6 (Add-On),add_on,2024-09-20,,active,1794
+ORD-2025-0001,SUB-ACM-009,Acme Corporation,Dell Latitude 5540 × 10 (Renewal),renewal,2025-01-15,2028-01-14,active,18990
+ORD-2025-0002,SUB-ACM-010,Acme Corporation,Microsoft 365 Business × 15,renewal,2025-01-15,2026-01-14,expired,2235
+ORD-2025-0003,SUB-SUN-006,Sunrise Media Group,HP EliteBook 840 G10 × 4,new_purchase,2025-01-20,2028-01-19,active,6796
+ORD-2025-0004,SUB-SUN-007,Sunrise Media Group,Adobe Acrobat Pro DC × 8,renewal,2025-02-01,2026-01-31,expired,1432
+ORD-2025-0005,SUB-BLU-009,BlueCrest Engineering,AutoCAD LT × 5,renewal,2025-02-15,2026-02-14,expired,2495
+ORD-2025-0006,SUB-BLU-010,BlueCrest Engineering,HP ZBook Studio G10 × 2 (Renewal),renewal,2025-02-20,2028-02-19,active,6598
+ORD-2025-0007,SUB-DAT-006,DataFlow Analytics,Dell Precision 5690 × 2,new_purchase,2025-03-01,2028-02-28,active,7998
+ORD-2025-0008,SUB-DAT-007,DataFlow Analytics,VMware Workstation Pro × 6,renewal,2025-03-01,2026-02-28,active,1494
+ORD-2025-0009,SUB-MER-008,Meridian Finance Ltd,Software Bundle × 4 (Add-On),add_on,2025-03-15,2026-03-14,active,1116
+ORD-2025-0010,SUB-MER-009,Meridian Finance Ltd,Microsoft 365 Business × 20,renewal,2025-03-15,2026-03-14,active,2980
+ORD-2025-0011,SUB-GLE-008,GlobalEdge Technologies,Dell Latitude 5440 × 15,new_purchase,2025-04-01,2028-03-31,active,21735
+ORD-2025-0012,SUB-GLE-009,GlobalEdge Technologies,Microsoft 365 Business × 30,renewal,2025-04-01,2026-03-31,active,4470
+ORD-2025-0013,SUB-IND-006,IndieArt Studios,Adobe Creative Cloud × 5,renewal,2025-04-15,2026-04-14,active,2995
+ORD-2025-0014,SUB-IND-007,IndieArt Studios,HP ZBook Fury 16 G10 × 2,new_purchase,2025-04-20,2028-04-19,active,7798
+ORD-2025-0015,SUB-QTM-006,QuantumLabs Research,Dell Precision 3580 × 2 (Add-On Monitors),add_on,2025-05-01,,active,898
+ORD-2025-0016,SUB-QTM-007,QuantumLabs Research,SOLIDWORKS Standard × 6,renewal,2025-05-01,2026-04-30,active,7770
+ORD-2025-0017,SUB-VRT-006,Vertigo Consulting,HP EliteBook 860 G10 × 5,new_purchase,2025-05-15,2028-05-14,active,9245
+ORD-2025-0018,SUB-VRT-007,Vertigo Consulting,Microsoft 365 Business × 10,renewal,2025-05-15,2026-05-14,active,1490
+ORD-2025-0019,SUB-HBV-006,Harbor View Corp,HP EliteBook 840 G10 × 5,new_purchase,2025-06-01,2028-05-31,active,8495
+ORD-2025-0020,SUB-HBV-007,Harbor View Corp,McAfee Endpoint Security × 12,renewal,2025-06-01,2026-05-31,active,828
+ORD-2025-0021,SUB-PAC-006,Pacific Rim Logistics,Dell Latitude 5540 × 12,renewal,2025-06-15,2028-06-14,active,22788
+ORD-2025-0022,SUB-NVL-006,NewVenture LLC,Dell Latitude 5540 × 5,new_purchase,2025-07-01,2028-06-30,active,9495
+ORD-2025-0023,SUB-NVL-007,NewVenture LLC,Microsoft 365 Business × 5,renewal,2025-07-01,2026-06-30,active,745
+ORD-2025-0024,SUB-APX-006,Apex Systems Inc,Dell Latitude 5540 × 18,renewal,2025-07-15,2028-07-14,active,34182
+ORD-2025-0025,SUB-APX-007,Apex Systems Inc,Jabra Evolve2 55 × 15 (Add-On),add_on,2025-07-20,,active,4485
+ORD-2025-0026,SUB-CLH-007,Clearwater Health,HP EliteBook 840 G10 × 6,new_purchase,2025-08-01,2028-07-31,active,10194
+ORD-2025-0027,SUB-CLH-008,Clearwater Health,Bitdefender GravityZone × 14,renewal,2025-08-01,2026-07-31,active,686
+ORD-2025-0028,SUB-IRN-007,Ironbridge Capital,Dell Latitude 5440 × 10,new_purchase,2025-08-15,2028-08-14,active,14490
+ORD-2025-0029,SUB-IRN-008,Ironbridge Capital,Microsoft 365 Business × 22,renewal,2025-08-15,2026-08-14,active,3278
+ORD-2025-0030,SUB-NVT-006,NovaTech Solutions,HP EliteBook 860 G10 × 8,renewal,2025-09-01,2028-08-31,active,14792
+ORD-2025-0031,SUB-NVT-007,NovaTech Solutions,VMware Workstation Pro × 6,renewal,2025-09-01,2026-08-31,active,1494
+ORD-2025-0032,SUB-SKY-007,Skyline Architects,Dell Precision 3580 × 4,renewal,2025-09-15,2028-09-14,active,9996
+ORD-2025-0033,SUB-SKY-008,Skyline Architects,AutoCAD LT × 6,renewal,2025-09-15,2026-09-14,active,2994
+ORD-2025-0034,SUB-FUS-006,Fusion Marketing,HP EliteBook 840 G10 × 8,renewal,2025-10-01,2028-09-30,active,13592
+ORD-2025-0035,SUB-FUS-007,Fusion Marketing,Adobe Creative Cloud × 4,renewal,2025-10-01,2026-09-30,active,2396
+ORD-2025-0036,SUB-CRW-006,CrestWave Finance,HP EliteBook 840 G10 × 10,new_purchase,2025-10-15,2028-10-14,active,16990
+ORD-2025-0037,SUB-CRW-007,CrestWave Finance,Microsoft Teams Phone × 16,renewal,2025-10-15,2026-10-14,active,1920
+ORD-2025-0038,SUB-PAX-006,Parallax Studios,HP ZBook Studio G10 × 4,new_purchase,2025-10-20,2028-10-19,active,12796
+ORD-2025-0039,SUB-PAX-007,Parallax Studios,Adobe Creative Cloud × 4,renewal,2025-10-20,2026-10-19,active,2396
+ORD-2025-0040,SUB-RDG-005,Ridgeline Consulting,Dell Latitude 5440 × 5,renewal,2025-11-01,2028-10-31,active,7245
+ORD-2025-0041,SUB-MTM-005,Momentum Creative,HP ZBook Studio G10 × 5,new_purchase,2025-09-01,2028-08-31,pending,14995
+ORD-2025-0042,SUB-SFX-004,SoloFX Studio,Dell Precision 3580 × 1,new_purchase,2025-06-01,2028-05-31,active,2599
+ORD-2025-0043,SUB-CST-004,Coastal Properties,HP EliteBook 840 G10 × 6,renewal,2025-12-01,2028-11-30,active,10194
+ORD-2025-0044,SUB-RED-004,Redstone Partners,Dell Latitude 5540 × 5,new_purchase,2025-12-05,2028-12-04,pending,9495
+ORD-2025-0045,SUB-BLU-011,BlueCrest Engineering,SOLIDWORKS Standard × 3,renewal,2025-03-01,2026-02-28,active,3885
+ORD-2025-0046,SUB-QTM-008,QuantumLabs Research,Dell Precision 5690 × 2,new_purchase,2025-05-10,2028-05-09,active,7998
+ORD-2025-0047,SUB-CLH-009,Clearwater Health,Teams Phone × 14,renewal,2025-08-15,2026-08-14,active,1680
+ORD-2025-0048,SUB-IRN-009,Ironbridge Capital,Teams Phone × 22,renewal,2025-09-01,2026-08-31,active,2640
+ORD-2025-0049,SUB-GLE-010,GlobalEdge Technologies,Extended Warranty 3yr × 20 (Add-On),add_on,2025-04-10,2028-04-09,active,4580
+ORD-2025-0050,SUB-APX-008,Apex Systems Inc,Dell Latitude 5440 × 10,new_purchase,2025-08-01,2028-07-31,active,14490
+ORD-2026-0001,SUB-ACM-011,Acme Corporation,Dell Latitude 5540 × 5 (Renewal),renewal,2026-01-15,2029-01-14,active,9495
+ORD-2026-0002,SUB-GLE-011,GlobalEdge Technologies,McAfee Endpoint Security × 50,renewal,2026-02-01,2027-01-31,active,3450
+ORD-2026-0003,SUB-BLU-012,BlueCrest Engineering,AutoCAD LT × 5 (Renewal),renewal,2026-02-15,2027-02-14,active,2495
+ORD-2026-0004,SUB-MER-010,Meridian Finance Ltd,Bitdefender GravityZone × 20,renewal,2026-02-10,2027-02-09,active,980
+ORD-2026-0005,SUB-VRT-008,Vertigo Consulting,Microsoft 365 Business × 10,renewal,2026-02-20,2027-02-19,pending,1490
+ORD-2026-0006,SUB-SKY-009,Skyline Architects,Dell Precision 3580 × 2,new_purchase,2026-02-01,2029-01-31,active,4998
+ORD-2026-0007,SUB-CLH-010,Clearwater Health,HP EliteBook 840 G10 × 8,new_purchase,2026-01-20,2029-01-19,active,13592
+ORD-2026-0008,SUB-PAC-007,Pacific Rim Logistics,Dell WD22TB4 Dock × 12 (Add-On),add_on,2026-01-10,,active,3588
+ORD-2026-0009,SUB-NVT-008,NovaTech Solutions,Dell Precision 5690 × 3,new_purchase,2026-02-05,2029-02-04,pending,11997
+ORD-2026-0010,SUB-CRW-008,CrestWave Finance,HP EliteBook 860 G10 × 8,new_purchase,2026-02-10,2029-02-09,active,14792
+ORD-2026-0011,SUB-HBV-008,Harbor View Corp,Microsoft 365 Business × 10,renewal,2026-02-15,2027-02-14,active,1490
+ORD-2026-0012,SUB-PAX-008,Parallax Studios,HP ZBook Fury 16 G10 × 2,new_purchase,2026-01-25,2029-01-24,active,7798
+ORD-2026-0013,SUB-MTM-006,Momentum Creative,Adobe Creative Cloud × 6,renewal,2026-02-01,2027-01-31,active,3594
+ORD-2026-0014,SUB-APX-009,Apex Systems Inc,Dell Latitude 5440 × 8 (Renewal),renewal,2026-02-10,2029-02-09,active,11592
+ORD-2026-0015,SUB-IRN-010,Ironbridge Capital,Dell Latitude 5540 × 10 (Renewal),renewal,2026-01-20,2029-01-19,active,18990
+ORD-2026-0016,SUB-RDG-006,Ridgeline Consulting,HP EliteBook 840 G10 × 4,new_purchase,2026-02-20,2029-02-19,pending,6796
+ORD-2026-0017,SUB-SFX-005,SoloFX Studio,SOLIDWORKS Standard × 1,renewal,2026-01-15,2027-01-14,active,1295
+ORD-2026-0018,SUB-FUS-008,Fusion Marketing,HP 27in QHD Monitor × 6 (Add-On),add_on,2026-02-10,,active,2334
+ORD-2026-0019,SUB-NVL-008,NewVenture LLC,Microsoft 365 Business × 8,renewal,2026-02-15,2027-02-14,active,1192
+ORD-2026-0020,SUB-CST-005,Coastal Properties,McAfee Endpoint Security × 10,renewal,2026-02-20,2027-02-19,pending,690

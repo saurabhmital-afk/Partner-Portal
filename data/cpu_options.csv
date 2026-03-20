@@ -1,0 +1,17 @@
+modelKey,label,delta,sku
+lat5540,"Intel Core i5-1345U (10-core, 1.6GHz)",0,I5-1345U
+lat5540,"Intel Core i7-1365U (10-core, 1.8GHz)",200,I7-1365U
+lat5440,"Intel Core i5-1345U (10-core, 1.6GHz)",0,I5-1345U
+lat5440,"Intel Core i7-1365U (10-core, 1.8GHz)",180,I7-1365U
+prec3580,"Intel Core i7-1365U (10-core, 1.8GHz)",0,I7-1365U
+prec3580,"Intel Core i9-13900H (24-core, 2.6GHz)",400,I9-13900H
+prec5690,"Intel Core i9-13900H (24-core, 2.6GHz)",0,I9-13900H
+prec5690,"Intel Core i9-13950HX (24-core, 2.2GHz)",500,I9-13950HX
+eb840,"Intel Core i5-1345U (10-core, 1.6GHz)",0,I5-1345U
+eb840,"Intel Core i7-1365U (10-core, 1.8GHz)",200,I7-1365U
+eb860,"Intel Core i5-1345U (10-core, 1.6GHz)",0,I5-1345U
+eb860,"Intel Core i7-1365U (10-core, 1.8GHz)",200,I7-1365U
+zbook,"Intel Core i7-13700H (14-core, 2.4GHz)",0,I7-13700H
+zbook,"Intel Core i9-13950HX (24-core, 2.2GHz)",500,I9-13950HX
+zbook-fury,"Intel Core i9-13950HX (24-core, 2.2GHz)",0,I9-13950HX
+zbook-fury,"Intel Xeon W-13955M (12-core, 2.8GHz)",700,XEON-W13955

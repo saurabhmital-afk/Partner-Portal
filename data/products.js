@@ -1,0 +1,560 @@
+/* ============================================================
+   NEXUS AI PARTNER PORTAL — Product Catalog (Source of Truth)
+   ============================================================
+   This file is the single source of truth for all product,
+   accessory, and software data used by the Configurator.
+
+   HOW TO MAKE CHANGES:
+   - Add/remove brands in BRANDS_DATA
+   - Add/remove models in MODELS_DATA (grouped by brand key)
+   - Add/remove accessories in ACCESSORIES_DATA
+   - Add/remove software in SOFTWARE_DATA
+   - Changes reflect immediately in the Configurator and pricing
+
+   IMAGE URLS: Replace the placehold.co URLs with real hosted
+   product image paths (relative or absolute) as needed.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   BRANDS
+   Keys must match brand keys used in MODELS_DATA
+   ---------------------------------------------------------- */
+window.BRANDS_DATA = {
+  dell: {
+    name:    'Dell',
+    logo:    '🖥️',
+    tagline: 'Reliable Business & Workstation Solutions',
+    image:   'https://placehold.co/120x48/1B3139/ffffff?text=Dell',
+    accentColor: '#007db8',
+  },
+  hp: {
+    name:    'HP',
+    logo:    '💻',
+    tagline: 'Innovation. Performance. Sustainability.',
+    image:   'https://placehold.co/120x48/1B3139/ffffff?text=HP',
+    accentColor: '#0096d6',
+  },
+};
+
+/* ----------------------------------------------------------
+   MODELS
+   Each model entry maps to one product card in Step 2.
+   compatDocks must reference keys present in ACCESSORIES_DATA.
+   cpuOpts / ramOpts / storageOpts drive the Step 3 dropdowns.
+   delta = price added on top of basePrice for that option.
+   ---------------------------------------------------------- */
+window.MODELS_DATA = {
+
+  dell: [
+    {
+      key:          'lat5540',
+      brand:        'dell',
+      category:     'business',
+      name:         'Dell Latitude 5540',
+      desc:         'Thin & light 15.6" business laptop with Intel vPro and enterprise-grade security.',
+      basePrice:    1299,
+      sku:          'DLAT5540-BASE',
+      image:        'https://placehold.co/280x170/f1f5f9/1B3139?text=Dell+Latitude+5540',
+      specNote:     'Intel vPro · FHD IPS · 65W USB-C · TPM 2.0',
+      highlights:   ['Intel vPro Enterprise option', '15.6" FHD IPS 250-nit display', '65W USB-C fast charging', 'MIL-STD-810H certified'],
+      isWorkstation: false,
+      compatDocks:  ['acc-ddock', 'acc-uhub'],
+      cpuOpts: [
+        { label: 'Intel Core i5-1345U (10-core, 1.6GHz)',  delta: 0,   sku: 'I5-1345U'  },
+        { label: 'Intel Core i7-1365U (10-core, 1.8GHz)',  delta: 200, sku: 'I7-1365U'  },
+      ],
+      ramOpts: [
+        { label: '8 GB DDR5-4800 (1×8 GB)',   delta: 0,   sku: 'RAM8G',  gb: 8  },
+        { label: '16 GB DDR5-4800 (2×8 GB)',  delta: 100, sku: 'RAM16G', gb: 16 },
+        { label: '32 GB DDR5-4800 (2×16 GB)', delta: 250, sku: 'RAM32G', gb: 32 },
+      ],
+      storageOpts: [
+        { label: '256 GB PCIe NVMe SSD',  delta: 0,   sku: 'SSD256' },
+        { label: '512 GB PCIe NVMe SSD',  delta: 100, sku: 'SSD512' },
+        { label: '1 TB PCIe NVMe SSD',    delta: 220, sku: 'SSD1T'  },
+      ],
+    },
+    {
+      key:          'lat5440',
+      brand:        'dell',
+      category:     'business',
+      name:         'Dell Latitude 5440',
+      desc:         'Compact 14" business laptop built for secure, productive hybrid work.',
+      basePrice:    1149,
+      sku:          'DLAT5440-BASE',
+      image:        'https://placehold.co/280x170/f1f5f9/1B3139?text=Dell+Latitude+5440',
+      specNote:     '14" FHD IPS · Intel vPro · 54Wh battery · 1.38 kg',
+      highlights:   ['14" FHD 250-nit display', 'Intel vPro optional', 'Up to 16h battery life', 'Thunderbolt 4 port'],
+      isWorkstation: false,
+      compatDocks:  ['acc-ddock', 'acc-uhub'],
+      cpuOpts: [
+        { label: 'Intel Core i5-1345U (10-core, 1.6GHz)',  delta: 0,   sku: 'I5-1345U' },
+        { label: 'Intel Core i7-1365U (10-core, 1.8GHz)',  delta: 180, sku: 'I7-1365U' },
+      ],
+      ramOpts: [
+        { label: '8 GB DDR5-4800 (1×8 GB)',   delta: 0,   sku: 'RAM8G',  gb: 8  },
+        { label: '16 GB DDR5-4800 (2×8 GB)',  delta: 100, sku: 'RAM16G', gb: 16 },
+        { label: '32 GB DDR5-4800 (2×16 GB)', delta: 240, sku: 'RAM32G', gb: 32 },
+      ],
+      storageOpts: [
+        { label: '256 GB PCIe NVMe SSD',  delta: 0,   sku: 'SSD256' },
+        { label: '512 GB PCIe NVMe SSD',  delta: 90,  sku: 'SSD512' },
+        { label: '1 TB PCIe NVMe SSD',    delta: 200, sku: 'SSD1T'  },
+      ],
+    },
+    {
+      key:          'prec3580',
+      brand:        'dell',
+      category:     'workstation',
+      name:         'Dell Precision 3580',
+      desc:         'Mobile workstation with ISV-certified NVIDIA graphics for demanding engineering workflows.',
+      basePrice:    1899,
+      sku:          'DPREC3580-BASE',
+      image:        'https://placehold.co/280x170/f1f5f9/1B3139?text=Dell+Precision+3580',
+      specNote:     'NVIDIA RTX A500 · ECC RAM · Thunderbolt 4 · ISV Certified',
+      highlights:   ['NVIDIA RTX A500 Laptop GPU', 'ECC memory support', 'ISV-certified for CAD/CAM', 'Thunderbolt 4 (2×)'],
+      isWorkstation: true,
+      compatDocks:  ['acc-ddock', 'acc-uhub'],
+      cpuOpts: [
+        { label: 'Intel Core i7-1365U (10-core, 1.8GHz)',  delta: 0,   sku: 'I7-1365U'  },
+        { label: 'Intel Core i9-13900H (24-core, 2.6GHz)', delta: 400, sku: 'I9-13900H' },
+      ],
+      ramOpts: [
+        { label: '16 GB DDR5-4800 ECC (1×16 GB)',  delta: 0,   sku: 'RAM16G',  gb: 16  },
+        { label: '32 GB DDR5-4800 ECC (2×16 GB)',  delta: 200, sku: 'RAM32G',  gb: 32  },
+        { label: '64 GB DDR5-4800 ECC (2×32 GB)',  delta: 450, sku: 'RAM64G',  gb: 64  },
+        { label: '128 GB DDR5-4800 ECC (4×32 GB)', delta: 900, sku: 'RAM128G', gb: 128 },
+      ],
+      storageOpts: [
+        { label: '512 GB PCIe Gen 4 NVMe SSD',  delta: 0,   sku: 'SSD512' },
+        { label: '1 TB PCIe Gen 4 NVMe SSD',    delta: 200, sku: 'SSD1T'  },
+        { label: '2 TB PCIe Gen 4 NVMe SSD',    delta: 420, sku: 'SSD2T'  },
+        { label: '4 TB PCIe Gen 4 NVMe SSD',    delta: 800, sku: 'SSD4T'  },
+      ],
+    },
+    {
+      key:          'prec5690',
+      brand:        'dell',
+      category:     'workstation',
+      name:         'Dell Precision 5690',
+      desc:         'High-performance 16" mobile workstation with top-tier NVIDIA RTX professional GPU.',
+      basePrice:    2499,
+      sku:          'DPREC5690-BASE',
+      image:        'https://placehold.co/280x170/f1f5f9/1B3139?text=Dell+Precision+5690',
+      specNote:     'NVIDIA RTX 3500 Ada · OLED 4K · PCIe Gen 5 · 16" 4K+',
+      highlights:   ['NVIDIA RTX 3500 Ada (12 GB)', '16" OLED 4K+ display option', 'PCIe Gen 5 NVMe storage', 'Up to 64 GB DDR5 ECC'],
+      isWorkstation: true,
+      compatDocks:  ['acc-ddock', 'acc-uhub'],
+      cpuOpts: [
+        { label: 'Intel Core i9-13900H (24-core, 2.6GHz)',  delta: 0,   sku: 'I9-13900H'  },
+        { label: 'Intel Core i9-13950HX (24-core, 2.2GHz)', delta: 500, sku: 'I9-13950HX' },
+      ],
+      ramOpts: [
+        { label: '32 GB DDR5-5600 ECC (2×16 GB)',  delta: 0,    sku: 'RAM32G',  gb: 32  },
+        { label: '64 GB DDR5-5600 ECC (2×32 GB)',  delta: 400,  sku: 'RAM64G',  gb: 64  },
+        { label: '128 GB DDR5-5600 ECC (4×32 GB)', delta: 900,  sku: 'RAM128G', gb: 128 },
+      ],
+      storageOpts: [
+        { label: '1 TB PCIe Gen 5 NVMe SSD',   delta: 0,    sku: 'SSD1T'  },
+        { label: '2 TB PCIe Gen 5 NVMe SSD',   delta: 380,  sku: 'SSD2T'  },
+        { label: '4 TB PCIe Gen 5 NVMe SSD',   delta: 760,  sku: 'SSD4T'  },
+      ],
+    },
+  ],
+
+  hp: [
+    {
+      key:          'eb840',
+      brand:        'hp',
+      category:     'business',
+      name:         'HP EliteBook 840 G10',
+      desc:         'Premium 14" business notebook with AI collaboration tools and HP Wolf Security.',
+      basePrice:    1199,
+      sku:          'HPEB840G10-BASE',
+      image:        'https://placehold.co/280x170/f1f5f9/1B3139?text=HP+EliteBook+840+G10',
+      specNote:     'HP Wolf Security · Sure View · HP Fast Charge · IR Camera',
+      highlights:   ['HP Sure View privacy screen', 'HP Wolf Security built-in', 'AI noise cancellation', 'HP Fast Charge (50% in 30 min)'],
+      isWorkstation: false,
+      compatDocks:  ['acc-hdock', 'acc-uhub'],
+      cpuOpts: [
+        { label: 'Intel Core i5-1345U (10-core, 1.6GHz)', delta: 0,   sku: 'I5-1345U' },
+        { label: 'Intel Core i7-1365U (10-core, 1.8GHz)', delta: 200, sku: 'I7-1365U' },
+      ],
+      ramOpts: [
+        { label: '8 GB DDR5-4800 (1×8 GB)',   delta: 0,   sku: 'RAM8G',  gb: 8  },
+        { label: '16 GB DDR5-4800 (2×8 GB)',  delta: 100, sku: 'RAM16G', gb: 16 },
+        { label: '32 GB DDR5-4800 (2×16 GB)', delta: 250, sku: 'RAM32G', gb: 32 },
+      ],
+      storageOpts: [
+        { label: '256 GB PCIe NVMe SSD',  delta: 0,   sku: 'SSD256' },
+        { label: '512 GB PCIe NVMe SSD',  delta: 100, sku: 'SSD512' },
+        { label: '1 TB PCIe NVMe SSD',    delta: 220, sku: 'SSD1T'  },
+      ],
+    },
+    {
+      key:          'eb860',
+      brand:        'hp',
+      category:     'business',
+      name:         'HP EliteBook 860 G10',
+      desc:         'Versatile 16" business laptop with exceptional display real estate and long battery life.',
+      basePrice:    1349,
+      sku:          'HPEB860G10-BASE',
+      image:        'https://placehold.co/280x170/f1f5f9/1B3139?text=HP+EliteBook+860+G10',
+      specNote:     '16" WUXGA IPS · HP Sure View · 83Wh battery · HP Wolf Security',
+      highlights:   ['16" WUXGA 400-nit display', 'HP Sure View privacy screen', '83Wh battery (up to 17h)', 'Dual Thunderbolt 4'],
+      isWorkstation: false,
+      compatDocks:  ['acc-hdock', 'acc-uhub'],
+      cpuOpts: [
+        { label: 'Intel Core i5-1345U (10-core, 1.6GHz)', delta: 0,   sku: 'I5-1345U' },
+        { label: 'Intel Core i7-1365U (10-core, 1.8GHz)', delta: 200, sku: 'I7-1365U' },
+      ],
+      ramOpts: [
+        { label: '8 GB DDR5-4800 (1×8 GB)',   delta: 0,   sku: 'RAM8G',  gb: 8  },
+        { label: '16 GB DDR5-4800 (2×8 GB)',  delta: 100, sku: 'RAM16G', gb: 16 },
+        { label: '32 GB DDR5-4800 (2×16 GB)', delta: 250, sku: 'RAM32G', gb: 32 },
+      ],
+      storageOpts: [
+        { label: '256 GB PCIe NVMe SSD',  delta: 0,   sku: 'SSD256' },
+        { label: '512 GB PCIe NVMe SSD',  delta: 100, sku: 'SSD512' },
+        { label: '1 TB PCIe NVMe SSD',    delta: 220, sku: 'SSD1T'  },
+      ],
+    },
+    {
+      key:          'zbook',
+      brand:        'hp',
+      category:     'workstation',
+      name:         'HP ZBook Studio G10',
+      desc:         'Creator & engineering workstation with OLED 2.8K display and professional NVIDIA GPU.',
+      basePrice:    2299,
+      sku:          'HPZBS-G10-BASE',
+      image:        'https://placehold.co/280x170/f1f5f9/1B3139?text=HP+ZBook+Studio+G10',
+      specNote:     'NVIDIA RTX 3000 Ada · OLED 2.8K · PCIe Gen 4 · ISV Certified',
+      highlights:   ['NVIDIA RTX 3000 Ada (8 GB)', 'OLED 2.8K AMOLED display', 'ISV certified (SolidWorks, Maya)', 'HP ZCentral Remote Boost'],
+      isWorkstation: true,
+      compatDocks:  ['acc-hdock', 'acc-uhub'],
+      cpuOpts: [
+        { label: 'Intel Core i7-13700H (14-core, 2.4GHz)',  delta: 0,   sku: 'I7-13700H'  },
+        { label: 'Intel Core i9-13950HX (24-core, 2.2GHz)', delta: 500, sku: 'I9-13950HX' },
+      ],
+      ramOpts: [
+        { label: '32 GB DDR5-4800 (2×16 GB)',  delta: 0,   sku: 'RAM32G',  gb: 32  },
+        { label: '64 GB DDR5-4800 (2×32 GB)',  delta: 400, sku: 'RAM64G',  gb: 64  },
+        { label: '128 GB DDR5-4800 (4×32 GB)', delta: 850, sku: 'RAM128G', gb: 128 },
+      ],
+      storageOpts: [
+        { label: '1 TB PCIe Gen 4 NVMe SSD',  delta: 0,   sku: 'SSD1T' },
+        { label: '2 TB PCIe Gen 4 NVMe SSD',  delta: 400, sku: 'SSD2T' },
+        { label: '4 TB PCIe Gen 4 NVMe SSD',  delta: 790, sku: 'SSD4T' },
+      ],
+    },
+    {
+      key:          'zbook-fury',
+      brand:        'hp',
+      category:     'workstation',
+      name:         'HP ZBook Fury 16 G10',
+      desc:         'Maximum-performance 16" mobile workstation for the most demanding rendering and simulation tasks.',
+      basePrice:    2899,
+      sku:          'HPZBF16-G10-BASE',
+      image:        'https://placehold.co/280x170/f1f5f9/1B3139?text=HP+ZBook+Fury+16+G10',
+      specNote:     'NVIDIA RTX 4000 Ada · 16" DreamColor · ECC RAM · PCIe Gen 5',
+      highlights:   ['NVIDIA RTX 4000 Ada (12 GB)', 'HP DreamColor 4K display', 'Up to 128 GB ECC DDR5', 'PCIe Gen 5 storage'],
+      isWorkstation: true,
+      compatDocks:  ['acc-hdock', 'acc-uhub'],
+      cpuOpts: [
+        { label: 'Intel Core i9-13950HX (24-core, 2.2GHz)',  delta: 0,   sku: 'I9-13950HX' },
+        { label: 'Intel Xeon W-13955M (12-core, 2.8GHz)',    delta: 700, sku: 'XEON-W13955' },
+      ],
+      ramOpts: [
+        { label: '32 GB DDR5-4800 ECC (2×16 GB)',  delta: 0,    sku: 'RAM32G',  gb: 32  },
+        { label: '64 GB DDR5-4800 ECC (2×32 GB)',  delta: 450,  sku: 'RAM64G',  gb: 64  },
+        { label: '128 GB DDR5-4800 ECC (4×32 GB)', delta: 1000, sku: 'RAM128G', gb: 128 },
+      ],
+      storageOpts: [
+        { label: '1 TB PCIe Gen 5 NVMe SSD',   delta: 0,   sku: 'SSD1T'  },
+        { label: '2 TB PCIe Gen 5 NVMe SSD',   delta: 420, sku: 'SSD2T'  },
+        { label: '4 TB PCIe Gen 5 NVMe SSD',   delta: 820, sku: 'SSD4T'  },
+      ],
+    },
+  ],
+};
+
+/* ----------------------------------------------------------
+   ACCESSORIES
+   brands: array of brand keys this accessory is compatible with.
+   Use ['dell','hp'] for universally compatible items.
+   ---------------------------------------------------------- */
+window.ACCESSORIES_DATA = [
+  {
+    key:      'acc-ddock',
+    name:     'Dell WD22TB4 Thunderbolt 4 Dock',
+    desc:     '180W power delivery, 2× TB4, 3× USB-A 3.2, HDMI 2.0, 2.5GbE LAN. Ideal for dual-monitor setups.',
+    price:    299,
+    sku:      'DOCK-DWD22TB4',
+    brands:   ['dell'],
+    category: 'docking',
+    icon:     'bi-hdd-rack',
+    image:    'https://placehold.co/200x140/f1f5f9/1B3139?text=Dell+TB4+Dock',
+  },
+  {
+    key:      'acc-hdock',
+    name:     'HP Thunderbolt Dock G4 135W',
+    desc:     '135W charging, 2× TB4, 4× USB-A, HDMI 2.0, RJ-45. HP-certified for EliteBook & ZBook.',
+    price:    279,
+    sku:      'DOCK-HPTBG4',
+    brands:   ['hp'],
+    category: 'docking',
+    icon:     'bi-hdd-rack',
+    image:    'https://placehold.co/200x140/f1f5f9/1B3139?text=HP+TB+Dock+G4',
+  },
+  {
+    key:      'acc-uhub',
+    name:     'Universal USB-C Hub 7-in-1',
+    desc:     '4K HDMI, 2× USB-A 3.0, USB-C 87W PD, SD/TF card slots. Works with any USB-C laptop.',
+    price:    79,
+    sku:      'HUB-USBC7',
+    brands:   ['dell', 'hp'],
+    category: 'docking',
+    icon:     'bi-usb-plug',
+    image:    'https://placehold.co/200x140/f1f5f9/1B3139?text=USB-C+Hub+7-in-1',
+  },
+  {
+    key:      'acc-dmon27',
+    name:     'Dell 27" USB-C Monitor (P2723DE)',
+    desc:     '27" QHD IPS, USB-C 90W, 4× USB-A, RJ-45, height/tilt/pivot adjustable stand.',
+    price:    449,
+    sku:      'MON-DP2723DE',
+    brands:   ['dell', 'hp'],
+    category: 'display',
+    icon:     'bi-display',
+    image:    'https://placehold.co/200x140/f1f5f9/1B3139?text=Dell+27%22+Monitor',
+  },
+  {
+    key:      'acc-hmon24',
+    name:     'HP 24" FHD Monitor (E24 G5)',
+    desc:     '24" FHD IPS, 75Hz, 3× USB-A, HDMI, DP, ergonomic stand. Business-grade build quality.',
+    price:    249,
+    sku:      'MON-HPE24G5',
+    brands:   ['dell', 'hp'],
+    category: 'display',
+    icon:     'bi-display',
+    image:    'https://placehold.co/200x140/f1f5f9/1B3139?text=HP+24%22+Monitor',
+  },
+  {
+    key:      'acc-hmon27',
+    name:     'HP 27" QHD Monitor (E27q G5)',
+    desc:     '27" QHD IPS, 75Hz, USB-C 65W, 2× USB-A, HDMI, DP. Colour-calibrated from factory.',
+    price:    389,
+    sku:      'MON-HPE27QG5',
+    brands:   ['dell', 'hp'],
+    category: 'display',
+    icon:     'bi-display',
+    image:    'https://placehold.co/200x140/f1f5f9/1B3139?text=HP+27%22+QHD',
+  },
+  {
+    key:      'acc-kbd',
+    name:     'Logitech MX Keys Advanced Keyboard',
+    desc:     'Backlit, multi-device (3 devices), smart illumination, USB-C charging, 2-year battery.',
+    price:    109,
+    sku:      'KB-LGMXKEYS',
+    brands:   ['dell', 'hp'],
+    category: 'peripherals',
+    icon:     'bi-keyboard',
+    image:    'https://placehold.co/200x140/f1f5f9/1B3139?text=MX+Keys',
+  },
+  {
+    key:      'acc-mse',
+    name:     'Logitech MX Master 3S Mouse',
+    desc:     'Ultra-smooth MagSpeed scroll, 8000 DPI, multi-device, quiet clicks, USB-C.',
+    price:    99,
+    sku:      'MS-LGMXM3S',
+    brands:   ['dell', 'hp'],
+    category: 'peripherals',
+    icon:     'bi-mouse2',
+    image:    'https://placehold.co/200x140/f1f5f9/1B3139?text=MX+Master+3S',
+  },
+  {
+    key:      'acc-hdst',
+    name:     'Jabra Evolve2 55 Wireless Headset',
+    desc:     'ANC, Teams/UC certified, 36-hour battery, professional microphone, USB-A dongle.',
+    price:    299,
+    sku:      'HS-JBR-EV255',
+    brands:   ['dell', 'hp'],
+    category: 'peripherals',
+    icon:     'bi-headset',
+    image:    'https://placehold.co/200x140/f1f5f9/1B3139?text=Jabra+Evolve2+55',
+  },
+  {
+    key:      'acc-bag',
+    name:     'Targus 15.6" CitySmart Pro Backpack',
+    desc:     'Checkpoint-friendly, RFID protection, USB-A pass-through, fits up to 15.6" laptops.',
+    price:    69,
+    sku:      'BAG-TRG156P',
+    brands:   ['dell', 'hp'],
+    category: 'carry',
+    icon:     'bi-bag',
+    image:    'https://placehold.co/200x140/f1f5f9/1B3139?text=Targus+Backpack',
+  },
+  {
+    key:      'acc-wrn',
+    name:     '3-Year Extended Warranty (On-site Next Business Day)',
+    desc:     'Extends manufacturer warranty to 3 years. On-site NBD technician dispatch included.',
+    price:    229,
+    sku:      'WRN-ONS3YR',
+    brands:   ['dell', 'hp'],
+    category: 'services',
+    icon:     'bi-shield-check',
+    image:    'https://placehold.co/200x140/f1f5f9/1B3139?text=3yr+Warranty',
+  },
+  {
+    key:      'acc-lock',
+    name:     'Kensington MicroSaver 2.0 Security Lock',
+    desc:     'K-Slot compatible, 1.8m carbon-steel cable, keyed lock, resettable combination.',
+    price:    29,
+    sku:      'SEC-KMS20',
+    brands:   ['dell', 'hp'],
+    category: 'security',
+    icon:     'bi-lock',
+    image:    'https://placehold.co/200x140/f1f5f9/1B3139?text=Security+Lock',
+  },
+  {
+    key:      'acc-webcam',
+    name:     'Logitech Brio 305 Full HD Webcam',
+    desc:     '1080p/30fps, auto light correction, USB-C, privacy shutter, certified for Teams/Zoom.',
+    price:    89,
+    sku:      'CAM-LGBR305',
+    brands:   ['dell', 'hp'],
+    category: 'peripherals',
+    icon:     'bi-camera-video',
+    image:    'https://placehold.co/200x140/f1f5f9/1B3139?text=Brio+305',
+  },
+];
+
+/* ----------------------------------------------------------
+   SOFTWARE
+   minRam: minimum RAM (GB) required for this software to appear
+   workstationOnly: if true, only enabled when a workstation
+   model is selected
+   subscriptionPeriod: 'perpetual' | '1yr' | '3yr'
+   ---------------------------------------------------------- */
+window.SOFTWARE_DATA = [
+  {
+    key:                'sw-w11p',
+    name:               'Windows 11 Pro',
+    desc:               'Full Windows 11 Pro licence. BitLocker, Remote Desktop, Hyper-V, and enterprise management.',
+    price:              199,
+    sku:                'SW-W11PRO',
+    minRam:             8,
+    workstationOnly:    false,
+    subscriptionPeriod: 'perpetual',
+    icon:               'bi-windows',
+    image:              'https://placehold.co/120x80/0078d4/ffffff?text=Win+11+Pro',
+  },
+  {
+    key:                'sw-m365',
+    name:               'Microsoft 365 Business Standard (1yr)',
+    desc:               'Word, Excel, PowerPoint, Teams, SharePoint, Exchange. Up to 300 users per org.',
+    price:              149,
+    sku:                'SW-M365BS',
+    minRam:             4,
+    workstationOnly:    false,
+    subscriptionPeriod: '1yr',
+    icon:               'bi-microsoft',
+    image:              'https://placehold.co/120x80/d83b01/ffffff?text=M365',
+  },
+  {
+    key:                'sw-aapdc',
+    name:               'Adobe Acrobat Pro DC (1yr)',
+    desc:               'Create, edit, sign, and protect PDFs. AI-powered tools and cloud storage included.',
+    price:              179,
+    sku:                'SW-AAPDC',
+    minRam:             8,
+    workstationOnly:    false,
+    subscriptionPeriod: '1yr',
+    icon:               'bi-file-earmark-pdf',
+    image:              'https://placehold.co/120x80/ec1c24/ffffff?text=Acrobat+Pro',
+  },
+  {
+    key:                'sw-mces',
+    name:               'McAfee Endpoint Security (1yr/seat)',
+    desc:               'Threat prevention, firewall, web control, and centralised management via ePolicy Orchestrator.',
+    price:              69,
+    sku:                'SW-MCES1Y',
+    minRam:             4,
+    workstationOnly:    false,
+    subscriptionPeriod: '1yr',
+    icon:               'bi-shield-lock-fill',
+    image:              'https://placehold.co/120x80/c0392b/ffffff?text=McAfee',
+  },
+  {
+    key:                'sw-vmw',
+    name:               'VMware Workstation Pro 17',
+    desc:               'Run multiple OS simultaneously on one PC. Snapshot, clone, and share VMs easily.',
+    price:              249,
+    sku:                'SW-VMWP17',
+    minRam:             16,
+    workstationOnly:    false,
+    subscriptionPeriod: 'perpetual',
+    icon:               'bi-layers-half',
+    image:              'https://placehold.co/120x80/607078/ffffff?text=VMware',
+  },
+  {
+    key:                'sw-autocad',
+    name:               'AutoCAD LT (1yr Subscription)',
+    desc:               '2D drafting and documentation. DWG-native, desktop + web + mobile access included.',
+    price:              499,
+    sku:                'SW-ACADLT1Y',
+    minRam:             16,
+    workstationOnly:    true,
+    subscriptionPeriod: '1yr',
+    icon:               'bi-pencil-square',
+    image:              'https://placehold.co/120x80/0696d7/ffffff?text=AutoCAD+LT',
+  },
+  {
+    key:                'sw-acc',
+    name:               'Adobe Creative Cloud All Apps (1yr)',
+    desc:               'Photoshop, Illustrator, Premiere Pro, After Effects, InDesign + 100 GB cloud storage.',
+    price:              599,
+    sku:                'SW-ACC1Y',
+    minRam:             16,
+    workstationOnly:    false,
+    subscriptionPeriod: '1yr',
+    icon:               'bi-palette2',
+    image:              'https://placehold.co/120x80/da1f26/ffffff?text=Adobe+CC',
+  },
+  {
+    key:                'sw-bitdf',
+    name:               'Bitdefender GravityZone Business (1yr/seat)',
+    desc:               'Next-gen AV, EDR, ransomware remediation, and centralised cloud management console.',
+    price:              49,
+    sku:                'SW-BDFGZ1Y',
+    minRam:             4,
+    workstationOnly:    false,
+    subscriptionPeriod: '1yr',
+    icon:               'bi-shield-fill-check',
+    image:              'https://placehold.co/120x80/e31e25/ffffff?text=Bitdefender',
+  },
+  {
+    key:                'sw-teams',
+    name:               'Microsoft Teams Phone (1yr/user)',
+    desc:               'Direct Routing PSTN calling, voicemail, auto-attendant, call queues. Requires M365.',
+    price:              120,
+    sku:                'SW-MSTPH1Y',
+    minRam:             4,
+    workstationOnly:    false,
+    subscriptionPeriod: '1yr',
+    icon:               'bi-telephone-fill',
+    image:              'https://placehold.co/120x80/5059c9/ffffff?text=Teams+Phone',
+  },
+  {
+    key:                'sw-solid',
+    name:               'SOLIDWORKS Standard (1yr Subscription)',
+    desc:               '3D CAD modelling, simulation, and design validation. ISV-certified on Precision & ZBook.',
+    price:              1295,
+    sku:                'SW-SWSTD1Y',
+    minRam:             16,
+    workstationOnly:    true,
+    subscriptionPeriod: '1yr',
+    icon:               'bi-box',
+    image:              'https://placehold.co/120x80/d52b1e/ffffff?text=SOLIDWORKS',
+  },
+];
