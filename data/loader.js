@@ -1,8 +1,8 @@
 /* ============================================================
    NEXUS AI PARTNER PORTAL — CSV Data Loader
    ============================================================
-   Fetches all 7 CSV files, parses them, and assembles the
-   window.* globals that app.js expects.
+   Fetches transactions.csv and products.csv, parses them, and
+   assembles the window.* globals that app.js expects.
 
    REQUIRES a local web server (e.g. VS Code Live Server).
    Right-click index.html → "Open with Live Server".
@@ -55,18 +55,17 @@
   /* ── Fetch all CSVs ─────────────────────────────────────── */
   const FILES = [
     'data/transactions.csv',
-    'data/models.csv',
-    'data/cpu_options.csv',
-    'data/ram_options.csv',
-    'data/storage_options.csv',
-    'data/accessories.csv',
-    'data/software.csv',
+    'data/products.csv',
   ];
+
+  // Cache-bust on every load so edited CSVs are never served stale from
+  // the browser's disk cache (python's http.server sends no-cache headers).
+  const CACHE_BUST = 'cb=' + Date.now();
 
   let rows;
   try {
     const texts = await Promise.all(
-      FILES.map(f => fetch(f).then(r => {
+      FILES.map(f => fetch(f + '?' + CACHE_BUST).then(r => {
         if (!r.ok) throw new Error(`HTTP ${r.status} — ${f}`);
         return r.text();
       }))
@@ -93,7 +92,7 @@
     return;
   }
 
-  const [txRows, modelRows, cpuRows, ramRows, storRows, accRows, swRows] = rows;
+  const [txRows, productRows] = rows;
 
   /* ── Assemble window globals ────────────────────────────── */
 
@@ -109,61 +108,19 @@
     amount:   parseFloat(r.amount) || 0,
   }));
 
-  window.BRANDS_DATA = {
-    dell: { name: 'Dell', logo: '🖥️', tagline: 'Reliable Business & Workstation Solutions',
-            image: 'https://placehold.co/120x48/1B3139/ffffff?text=Dell', accentColor: '#007db8' },
-    hp:   { name: 'HP',  logo: '💻', tagline: 'Innovation. Performance. Sustainability.',
-            image: 'https://placehold.co/120x48/1B3139/ffffff?text=HP',   accentColor: '#0096d6' },
-  };
-
-  window.MODELS_DATA = {};
-  for (const m of modelRows) {
-    const brand = m.brand;
-    if (!window.MODELS_DATA[brand]) window.MODELS_DATA[brand] = [];
-    window.MODELS_DATA[brand].push({
-      key:          m.key,
-      brand:        m.brand,
-      category:     m.category,
-      name:         m.name,
-      desc:         m.desc,
-      basePrice:    parseFloat(m.basePrice) || 0,
-      sku:          m.sku,
-      image:        m.image,
-      specNote:     m.specNote,
-      isWorkstation: m.isWorkstation === 'true',
-      compatDocks:  m.compatDocks ? m.compatDocks.split('|') : [],
-      cpuOpts:      cpuRows.filter(r => r.modelKey === m.key)
-                           .map(r => ({ label: r.label, delta: parseFloat(r.delta) || 0, sku: r.sku })),
-      ramOpts:      ramRows.filter(r => r.modelKey === m.key)
-                           .map(r => ({ label: r.label, delta: parseFloat(r.delta) || 0, sku: r.sku, gb: parseInt(r.gb) || 0 })),
-      storageOpts:  storRows.filter(r => r.modelKey === m.key)
-                            .map(r => ({ label: r.label, delta: parseFloat(r.delta) || 0, sku: r.sku })),
-    });
-  }
-
-  window.ACCESSORIES_DATA = accRows.map(r => ({
-    key:      r.key,
-    name:     r.name,
-    desc:     r.desc,
-    price:    parseFloat(r.price) || 0,
-    sku:      r.sku,
-    brands:   r.brands ? r.brands.split('|') : [],
-    category: r.category,
-    icon:     r.icon,
-    image:    r.image,
-  }));
-
-  window.SOFTWARE_DATA = swRows.map(r => ({
-    key:                r.key,
-    name:               r.name,
-    desc:               r.desc,
-    price:              parseFloat(r.price) || 0,
-    sku:                r.sku,
-    minRam:             parseInt(r.minRam) || 0,
-    workstationOnly:    r.workstationOnly === 'true',
-    subscriptionPeriod: r.subscriptionPeriod,
-    icon:               r.icon,
-    image:              r.image,
+  window.PRODUCTS_DATA = productRows.map(r => ({
+    key:         r.key,
+    name:        r.name,
+    category:    r.category,
+    type:        r.type,
+    vendorLine:  r.vendorLine,
+    shortDesc:   r.shortDesc,
+    longDesc:    r.longDesc,
+    icon:        r.icon,
+    docsUrl:     r.docsUrl,
+    listPrice:   parseFloat(r.listPrice) || 0,
+    priceUnit:   r.priceUnit,
+    addonForKey: r.addonForKey,
   }));
 
   /* ── Launch the app ─────────────────────────────────────── */
